@@ -1,3 +1,4 @@
+base-package: com.wyx.shiro
 # 配置端口
 server:
   port: 9999
@@ -25,6 +26,8 @@ spring:
 mybatis-plus:
   # xml扫描，多个目录用逗号或者分号分隔（告诉 Mapper 所对应的 XML 文件位置）
   mapper-locations: classpath:/mapper/*Mapper.xml
+  # resultMap的type或者parameterType会使用自定义的pojo
+  type-aliases-package: ${base-package}.entity
   # 以下配置均有默认值,可以不设置
   global-config:
     db-config:

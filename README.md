@@ -3,7 +3,7 @@ SpringBoot整合Shiro实现动态权限加载更新+Session共享+单点登录
 ***
 **主要插件版本**
 1. SpringBoot版本:2.2.2
-2. MyBatis-Plus版本: 3.1.0
+2. MyBatis-Plus版本: 3.3.0
 3. JDK版本:1.8    
 4. Shiro版本:1.4    
 5. Shiro-redis插件版本:3.1.0
