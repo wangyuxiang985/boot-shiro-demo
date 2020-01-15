@@ -1,5 +1,7 @@
 package com.wyx.shiro.service.impl;
 
+import com.baomidou.mybatisplus.core.conditions.Wrapper;
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.wyx.shiro.entity.SysUser;
 import com.wyx.shiro.mapper.SysUserMapper;
 import com.wyx.shiro.service.ISysUserService;
@@ -17,4 +19,10 @@ import org.springframework.stereotype.Service;
 @Service
 public class SysUserServiceImpl extends ServiceImpl<SysUserMapper, SysUser> implements ISysUserService {
 
+    @Override
+    public SysUser selectUserByName(String username) {
+        QueryWrapper<SysUser> queryWrapper = new QueryWrapper<>();
+        queryWrapper.lambda().eq(SysUser::getUsername, username);
+        return this.baseMapper.selectOne(queryWrapper);
+    }
 }

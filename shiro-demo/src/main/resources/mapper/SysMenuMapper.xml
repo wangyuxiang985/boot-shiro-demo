@@ -20,4 +20,11 @@
         menu_id, name, perms, create_by, create_time, update_by, update_time, remark, version
     </sql>
 
+    <select id="selectSysMenuByRoleId" parameterType="long" resultType="com.wyx.shiro.entity.SysMenu">
+        SELECT sm.* FROM sys_menu sm
+        LEFT JOIN sys_role_menu srm
+        ON sm.menu_id = srm.menu_id
+        WHERE se.role_id = #{roleId}
+    </select>
+
 </mapper>

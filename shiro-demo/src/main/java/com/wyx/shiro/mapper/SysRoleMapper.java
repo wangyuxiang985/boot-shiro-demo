@@ -3,6 +3,8 @@ package com.wyx.shiro.mapper;
 import com.wyx.shiro.entity.SysRole;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
+import java.util.List;
+
 /**
  * <p>
  * 角色表 Mapper 接口
@@ -13,4 +15,5 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
  */
 public interface SysRoleMapper extends BaseMapper<SysRole> {
 
+    List<SysRole> selectSysRoleByUserId(Long userId);
 }

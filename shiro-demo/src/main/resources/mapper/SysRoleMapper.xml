@@ -19,4 +19,11 @@
         role_id, role_name, create_by, create_time, update_by, update_time, remark, version
     </sql>
 
+    <select id="selectSysRoleByUserId" parameterType="long" resultType="com.wyx.shiro.entity.SysRole">
+        select sr.* from sys_role sr
+        left join sys_user_role sur
+        on sr.role_id = sur.role_id
+        where sur.user_id = #{userId}
+    </select>
+
 </mapper>

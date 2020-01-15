@@ -13,4 +13,12 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface ISysUserService extends IService<SysUser> {
 
+    /**
+     * @Author yuxiang
+     * @Description //根据用户名查询用户实体
+     * @Date 2020/1/15
+     * @Param [username]
+     * @return com.wyx.shiro.entity.SysUser
+    **/
+    SysUser selectUserByName(String username);
 }
